@@ -1,0 +1,16 @@
+my_rating = [3, 4, 5, 5, 2]
+print(f"Рейтинг - {my_rating}")
+digit = int(input("Введите число: "))
+while digit != 123:
+    for el in range(len(my_rating)):
+        if my_rating[el] == digit:
+            my_rating.insert(el + 1, digit)
+            break
+        elif my_rating[0] < digit:
+            my_rating.insert(0, digit)
+        elif my_rating[-1] > digit:
+            my_rating.append(digit)
+        elif my_rating[el] > digit and my_rating[el + 1] < digit:
+            my_rating.insert(el + 1, digit)
+    print(f"текущий список - {my_rating}")
+    digit = int(input("Введите число "))
