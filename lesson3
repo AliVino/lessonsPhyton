@@ -1,0 +1,20 @@
+#1 задание
+
+def div(x,y):
+    try:
+        return x/y
+    except ZeroDivisionError:
+        return 'делить на 0 нельзя'
+print (div(int(input('Введите делимое: ')), int(input('Введите делитель: '))))
+
+#2 задание
+
+def user_prof(fname = format(input("Укажите Ваше имя: ")), sname = format(input("Укажите Вашу фамилию: ")), year_bday = int(input("Укажите Ваш год рождения: ")), city = format(input("Укажите Ваш город проживания: ")), email = format(input("Укажите Ваш e-mail: ")), phone_number = int(input("Укажите Ваш номер телефона: "))):
+    profile_user = fname + sname + str(year_bday) + city + email + str(phone_number)
+    return profile_user
+
+user_profile = user_prof()
+print(user_profile)
+
+#3 задание
+
