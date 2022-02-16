@@ -18,3 +18,41 @@ print(user_profile)
 
 #3 задание
 
+def my_func(a,b,c):
+    my_list = [a,b,c]
+    list_itog = []
+    max_1 = max(my_list)
+    list_itog.append(max_1)
+    my_list.remove(max_1)
+    max_2 = max(my_list)
+    list_itog.append(max_2)
+    return sum(list_itog)
+print(my_func(int(input('Введите первое число: ')), int(input('Введите второе число: ')), int(input('Введите третье число: '))))
+
+#4 задание
+
+def my_func(x,y):
+    x_1 = abs(x)
+    c = x_1 ** y
+    return c
+print(my_func(0.5, -2))
+
+#5 задание
+
+itog = 0
+while True:
+    numbers = input("Введите строку чисел, разделенных пробелом (для завершения программы введите $): ")
+    tokens = numbers.split(" ")
+    for token in tokens:
+        try:
+            number = float(token)
+            itog += number
+            print(itog)
+        except:
+            token == '$'
+            print(f"Сумма числе =  {itog}. Программа завершена")
+            exit()
+            
+#6 задание
+
+
