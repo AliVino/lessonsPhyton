@@ -42,17 +42,23 @@ print(my_func(0.5, -2))
 itog = 0
 while True:
     numbers = input("Введите строку чисел, разделенных пробелом (для завершения программы введите $): ")
-    tokens = numbers.split(" ")
-    for token in tokens:
+    members = numbers.split(" ")
+    for member in members:
         try:
-            number = float(token)
+            number = float(member)
             itog += number
             print(itog)
         except:
-            token == '$'
-            print(f"Сумма числе =  {itog}. Программа завершена")
-            exit()
+            if member == '$':
+                print(f"Сумма чисел =  {itog}. Программа завершена")
+                exit(0)
+            else: print(f"Сумма чисел =  {itog}. ERROR")
             
 #6 задание
+
+def int_func(line):
+    line = input('Введите слово (предложение): ')
+    return line.title()
+print(int_func('и можно не латинскими')) # честно говоря, не раскусила "изюминку" данного задания.Изначально с title все переводится в нужный формат
 
 
