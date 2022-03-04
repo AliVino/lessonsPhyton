@@ -1,0 +1,39 @@
+№ЗАДАНИЕ 1
+
+strings = []
+
+while True:
+    with open('filek1.txt', 'a+') as mia:
+        string = input('Введите строку: ')
+
+        mia.write(f'{string}\n')
+
+        if not string:
+            break
+
+    my_file = open('filek1.txt', 'r')
+    print(my_file.read())
+
+# ЗАДАНИЕ 2
+
+my_file = open('Task2.txt', 'w+')
+
+str_list = ['stroka_1\n', 'stroka_2\n', 'stroka_3\n']
+
+my_file.writelines(str_list)
+
+my_file.close()
+
+f = open('Task2.txt')
+i = 0
+for line in f:
+    i
+    i+=1
+
+print(f'Количество строк - {i}')
+
+file = open('Task2.txt', 'rt')
+data = file.read()
+words = data.split()
+a = len(words)
+print(f'количество слов - {a}')
