@@ -1,0 +1,92 @@
+#ЗАДАНИЕ 1
+
+mport time
+class TrafficLight:
+    __color = None
+    __colors = ['red', 'yellow', 'green']
+
+    def __init__(self):
+        self.__color = self.__colors[0]
+
+        def __init__(self, red_time: int = 7, yellow_time: int = 2, green_time: int = 5):
+            self.__timing = {
+                "red": red_time,
+                "yellow": yellow_time,
+                "green": green_time
+            }
+
+            def running(self):
+                for mode, timer in itertools.cycle(self.__timing.items()):
+                    self.__color = mode
+
+                    for second in range(timer):
+                        print(f"{self} [{second + 1}]")
+                        time.sleep(1)
+
+    def running(self):
+        i=0
+        while i<5:
+            for el in TrafficLight.__colors:
+                print(el)
+                i+=1
+                time.sleep(1)
+
+traffic = TrafficLight()
+traffic.running()
+
+#ЗАДАНИЕ 2
+
+class Road:
+    __length = None
+    __width = None
+    weigth = None
+    tickness = None
+
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+        print('Create road_to_village object')
+
+    def intake(self):
+        self.weigth = 25
+        self.tickness = 0.05
+        intake = self.length * self.width * self.weigth * self.tickness / 1000
+        print(f'Need {intake} ton for the building')
+
+road_to_village = Road(10000, 5)
+road_to_village.intake()
+
+# ЗАДАНИЕ 3
+
+class Worker:
+    name: str
+    surname: str
+    position: str
+    _income: dict
+
+    def __init__(self, name: str, surname: str, position: str, wage: int, bonus: int):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = {
+            "wage": wage,
+            "bonus": bonus
+        }
+
+
+class Position(Worker):
+    def get_full_name(self):
+        return f"{self.name} {self.surname}"
+
+    def get_total_income(self):
+        return sum(self._income.values())
+
+
+john = Position("John", "Doe", "Developer", 2000, 800)
+print(john.get_full_name(), john.get_total_income())
+
+artur = Position("Artur", "Mia", "Developer", 1800, 800)
+print(artur.get_full_name(), artur.get_total_income())
+
+# ЗАДАНИЕ 4
+
