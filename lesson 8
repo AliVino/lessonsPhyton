@@ -34,3 +34,52 @@ my_date = Date('19 - 08 - 2022')
 print(my_date)
 print(Date.extract_numbers('19 - 08 - 2022'))
 print(Date.validate_numbers(19, 8, 2100))
+
+# ЗАДАНИЕ 2
+
+# -*- coding: utf-8 -*-
+class DivOnNull:
+    def __init__(self, divider, denominator):
+        self.divider = divider
+        self.denominator = denominator
+
+    @staticmethod
+    def div_on_null(divider, denominator):
+        try:
+            return (divider / denominator)
+        except:
+            return (f"Невозможно делить на 0")
+
+
+div = DivOnNull(100, 10)
+print(div)
+print(DivOnNull.div_on_null(10, 0))
+print(DivOnNull.div_on_null(10, 0.1))
+print(div.div_on_null(100, 0))
+
+#ЗАДАНИЕ 3
+
+# -*- coding: utf-8 -*-
+class Error:
+    def __init__(self, *args):
+        self.my_list = []
+
+    def my_input(self):
+        while True:
+            try:
+                val = int(input('Введите значения и нажмите "Enter" - '))
+                self.my_list.append(val)
+                print(f'Текущий список - {self.my_list} \n ')
+            except:
+                print(f"Список содержит недопустимые значения")
+                y_or_n = input(f'Ввести еще раз? Y/N ')
+
+                if y_or_n == 'Y' or y_or_n == 'y':
+                    print(try_except.my_input())
+                elif y_or_n == 'N' or y_or_n == 'n':
+                    return f'Всего доброго!'
+                else:
+                    return f'Всего доброго!'
+
+try_except = Error(1)
+print(try_except.my_input())
