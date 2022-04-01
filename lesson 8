@@ -1,0 +1,36 @@
+#ЗАДАНИЕ 1
+
+# -*- coding: utf-8 -*-
+
+class Date:
+    day: int
+    month: int
+    year: int
+
+    def __init__(self, date_string: str):
+        numbers = Date.extract_numbers(date_string)
+        self.day, self.month, self.year = numbers
+
+    def _str_(self):
+        return f'Дата: {self.extract_numbers()}'
+
+    @classmethod
+    def extract_numbers(cls, date_string: str) -> list:
+        return [int(x) for x in date_string.split('-')]
+
+    def validate_numbers(day, month, year):
+        if day <= 0 or day > 31:
+            return f'Неверно указан день'
+        if month <=0 or month >= 12:
+            return f'Неверно указан месяц'
+        if year <=0 or year >= 2099:
+            return f'Неверно указан год'
+        else:
+            return f'Все ок'
+
+
+my_date = Date('19 - 08 - 2022')
+
+print(my_date)
+print(Date.extract_numbers('19 - 08 - 2022'))
+print(Date.validate_numbers(19, 8, 2100))
